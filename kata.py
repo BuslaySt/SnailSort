@@ -18,4 +18,5 @@
 
 
 def snail(snail_map):
-    pass
+    for line in snail_map:
+        pass
