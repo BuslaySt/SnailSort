@@ -3,6 +3,11 @@ import unittest
 
 
 class Test_Generate_Hashtag(unittest.TestCase):
+    def test0(self):    
+        array = [[]]
+        expected = []
+        self.assertEqual(snail(array), expected)
+
     def test1(self):
         array = [[1,2,3],
                  [4,5,6],

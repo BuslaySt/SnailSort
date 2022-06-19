@@ -17,6 +17,38 @@
 
 # Let's see some memos
 
-
 def snail(snail_map):
-    pass
+    tail = list()
+    while True:
+        # Move right
+        if snail_map:
+            for number in snail_map[0]:
+                tail.append(number)
+            del snail_map[0]
+        else:
+            return tail
+        # Move down
+        if snail_map:
+            for i in range(len(snail_map)):
+                number = snail_map[i][-1]
+                tail.append(number)
+                del snail_map[i][-1]
+        else:
+            return tail
+        # Move left
+        if snail_map:
+            for i in range(len(snail_map[-1])):
+                number = snail_map[-1][-1]
+                tail.append(number)
+                del snail_map[-1][-1]
+            del snail_map[-1]
+        else:
+            return tail
+        # Move up
+        if snail_map:
+            for i in range(len(snail_map), 0, -1):
+                number = snail_map[i-1][0]
+                tail.append(number)
+                del snail_map[i-1][0]
+        else:
+            return tail
